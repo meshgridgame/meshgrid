@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="183mm"
+   height="73mm"
+   viewBox="0 0 183 73"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="banner.svg"
+   inkscape:export-filename="/home/synapse/Documents/Documents/game research/design/Meshgrid/meshgrid/images/banner.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="209mm"
+     inkscape:zoom="0.57370932"
+     inkscape:cx="-159.48843"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4539"
+       transform="matrix(0.82055117,0,0,0.82055117,0.95883892,-7.9246787)">
+      <g
+         id="g970"
+         transform="matrix(0.34772185,0.34772185,-0.34772185,0.34772185,-76.991161,-100.25132)">
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-23"
+           width="125.98803"
+           height="8.8007793"
+           x="-405.94742"
+           y="524.24304"
+           transform="matrix(0.003891,0.99999243,0.66571878,0.74620273,0,0)" />
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-6-7"
+           width="125.98803"
+           height="8.8007793"
+           x="-452.53723"
+           y="586.67841"
+           transform="matrix(0.003891,0.99999243,0.66571878,0.74620273,0,0)" />
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-2-5"
+           width="125.98803"
+           height="8.8007793"
+           x="-499.12695"
+           y="649.11371"
+           transform="matrix(0.003891,0.99999243,0.66571878,0.74620273,0,0)" />
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-9-92"
+           width="125.98803"
+           height="8.8007793"
+           x="319.28534"
+           y="8.5987978"
+           transform="matrix(0.99999243,0.003891,0.74620273,0.66571878,0,0)" />
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-6-3-28"
+           width="125.98803"
+           height="8.8007793"
+           x="272.69553"
+           y="71.034195"
+           transform="matrix(0.99999243,0.003891,0.74620273,0.66571878,0,0)" />
+        <rect
+           style="fill:#000000;stroke-width:0.324988"
+           id="rect320-6-3-5-2-6-9"
+           width="125.98803"
+           height="8.8007793"
+           x="226.1058"
+           y="133.46953"
+           transform="matrix(0.99999243,0.003891,0.74620273,0.66571878,0,0)" />
+      </g>
+      <path
+         id="rect320-6-3-5-23-5"
+         style="fill:#000000;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 25.036943,39.517256 -19.7310914,19.88561 -0.24598,4.32066 21.9976214,-22.1697 12.31346,12.40958 h 4.0411 l 12.31346,-12.4101 21.99814,22.17022 -0.2465,-4.32066 -19.73109,-19.88561 h -4.0411 l -12.31346,12.40958 -12.31346,-12.40958 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="68.899132"
+       y="14.917335"
+       id="text1603"><tspan
+         sodipodi:role="line"
+         id="tspan1601"
+         style="font-weight:normal;font-size:14.1111px;stroke-width:0.264583"
+         x="68.899132"
+         y="14.917335"><tspan
+   style="font-weight:bold"
+   id="tspan3519">M</tspan>eshgrid</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:14.1111px;stroke-width:0.264583"
+         x="68.899132"
+         y="32.55621"
+         id="tspan1605"><tspan
+   style="font-weight:bold"
+   id="tspan3521">G</tspan>ame </tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:14.1111px;stroke-width:0.264583"
+         x="68.899132"
+         y="50.195084"
+         id="tspan1609"><tspan
+   style="font-weight:bold"
+   id="tspan3523">E</tspan>xperimentation</tspan><tspan
+         sodipodi:role="line"
+         style="font-weight:normal;font-size:14.1111px;stroke-width:0.264583"
+         x="68.899132"
+         y="67.833961"
+         id="tspan1607"><tspan
+   style="font-weight:bold"
+   id="tspan3525">E</tspan>nvironment</tspan></text>
+  </g>
+</svg>
