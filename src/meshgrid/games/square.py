@@ -2,8 +2,8 @@ import enum
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-from meshgrid.grids.square import SquareGrid2D
-from meshgrid.grids.square_multilayer import SquareMultilayerGrid2D
+from src.meshgrid.grids.square import SquareGrid2D
+from src.meshgrid.grids.square_multilayer import SquareMultilayerGrid2D
 
 class SquareGridGame(ABC):
     '''A basic inheritable game on a square grid.

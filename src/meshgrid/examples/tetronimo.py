@@ -1,7 +1,7 @@
 import numpy as np
 
-from meshgrid.games.square import SquareGridGame
-from meshgrid.shape.square import SquareShapeManager
+from src.meshgrid.games.square import SquareGridGame
+from src.meshgrid.shape.square import SquareShapeManager
 
 class TetronimoGame(SquareGridGame):
     '''An example falling-tetronimo game on a sinigle square Grid.

@@ -1,8 +1,8 @@
 import numpy as np
 
-from meshgrid.games.square import SquareGridGame
-from meshgrid.shape.square import SquareShapeManager
-from meshgrid.queueing.discrete import UnitIDOrderedTurnQueue
+from src.meshgrid.games.square import SquareGridGame
+from src.meshgrid.shape.square import SquareShapeManager
+from src.meshgrid.queueing.discrete import UnitIDOrderedTurnQueue
 
 class BasicRPG(SquareGridGame):
     '''An example tactical RPG game on a single square Grid.

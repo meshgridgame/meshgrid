@@ -1,4 +1,4 @@
-from meshgrid.visualizers.notebook import NotebookVisualizer
+from src.meshgrid.visualizers.notebook import NotebookVisualizer
 
 class NotebookPlayer:
     '''The top-level class to run Meshgrid games within Jupyter Notebooks
