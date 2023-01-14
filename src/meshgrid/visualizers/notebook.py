@@ -64,15 +64,15 @@ class NotebookVisualizer:
         
         :game: The Game object to visualize.
         '''
-        
+
         self.game = game
         self.color_id = game.grid.stats[:,game.STAT.COLOR]
         if "on_notebook_key_down" in dir(self.game):
             self.canvas.on_key_down(self.output.capture()(self.game.on_notebook_key_down))
-        if "on_notebok_mouse_move" in dir(self.game):
-            self.canvas.on_mouse_move(self.output.capture()(self.game.on_notebok_mouse_move))
-        if "on_notebok_mouse_down" in dir(self.game):
-            self.canvas.on_mouse_down(self.output.capture()(self.game.on_notebok_mouse_down))
+        if "on_notebook_mouse_move" in dir(self.game):
+            self.canvas.on_mouse_move(self.output.capture()(self._add_grid_coordinates(self.game.on_notebook_mouse_move)))
+        if "on_notebook_mouse_down" in dir(self.game):
+            self.canvas.on_mouse_down(self.output.capture()(self._add_grid_coordinates(self.game.on_notebook_mouse_down)))
         self._validate_stats_enum(self.game.STAT)
 
     def _validate_stats_enum(self, STAT_ENUM):
@@ -127,6 +127,14 @@ class NotebookVisualizer:
                     self.scale * (grid.shape.mask[shape_start:shape_end,0]+grid.loc[unit_id,0]),
                     self.scale
                 )
+
+    def _add_grid_coordinates(self,on_notebook_mouse_event_fxn):
+
+        def new_mouse_event_fxn(x,y):
+            i,j = self.game.grid.pixels_to_grid(x,y,self.scale)
+            on_notebook_mouse_event_fxn(x,y,i,j)
+
+        return new_mouse_event_fxn
 
     def display(self):
         '''Show the Game and all captured STDOUT & STDERR output values.'''

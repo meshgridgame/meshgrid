@@ -350,3 +350,8 @@ class SquareMultilayerGrid2D:
                 result = self.move_piece(unit_id,0,-1) # left
         
         return result
+
+    def pixels_to_grid(self,x,y,scale):
+        '''Convert from screen coordinates to a grid `(i,j)` location.'''
+
+        return y//scale, x//scale

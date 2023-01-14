@@ -36,6 +36,7 @@ class SquareGrid2D:
     :rebuild_loc_from_board: Clear Loc and rebuild it from piece locations on Board
     :rebuild_board_from_loc: Clear Board and rebuild it from piece locations on Loc
     :step_closer: Move one unit a single non-diagonal square closer to another unit
+    :pixels_to_grid: Convert from screen coordinates to a grid `(i,j)` location
     '''
 
     def __init__(self,grid_width,grid_height,max_units,
@@ -324,3 +325,8 @@ class SquareGrid2D:
                 result = self.move_piece(unit_id,0,-1) # left
         
         return False
+
+    def pixels_to_grid(self,x,y,scale):
+        '''Convert from screen coordinates to a grid `(i,j)` location.'''
+
+        return y//scale, x//scale
