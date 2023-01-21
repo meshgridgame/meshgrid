@@ -1,4 +1,10 @@
-<center><img src="./images/banner.png" width=400></center>
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/banner_dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./images/banner_light.png">
+  <img alt="Meshgrid Game Experimentation Environment" src="./images/banner_light.png">
+</picture></center>
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/meshgridgame/meshgrid/main?labpath=examples.ipynb)
 
 ## 1. Introduction
 
@@ -18,9 +24,11 @@ Check out the `meshgrid.ipynb` tutorial notebook for examples of how Meshgrid ca
 
 Most of the package's structures revolve around wrapping Grid objects, and adding game I/O and visualizations to the components of Grid objects. A "Grid" itself is generally defined as being a collection of "Pieces" with a "Board". The pieces have a location and may also have game stats associated with them:
 
-<br>
-<center><img src="./images/grid.png" width=500></center>
-<br>
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/grid_dark.png" width=500>
+  <source media="(prefers-color-scheme: light)" srcset="./images/grid_light.png" width=500>
+  <img alt="Grid Diagram" src="./images/grid_light.png" width=500>
+</picture></center>
 
 A game typically will have just one Grid object, but it is entirely possible to use more than one Grid object in a game, or use a Grid object that has more than one "layer" by using a Multilayer Grid. Currently all Grid objects use Square Boards, but future implementations will include the option for Hexagonal Boards as well.
 
@@ -28,15 +36,20 @@ A game typically will have just one Grid object, but it is entirely possible to 
 
 The Board itself is represented as a 2D array of squares. The ID of each piece is written into the square on the board where the piece is located (with empty squares represented by `-1`). The Loc and Stats objects are also 2D arrays, where the first index is the piece's "unit ID". Loc holds the location of the piece on the board, but in `(i,j)` coordinates. This implies that you can find the location of a piece in two ways: by finding the piece's ID on the Board, or by looking at the `(i,j)` value for that piece in Loc. See the diagram below (with row and columns given descriptors in gray for clarity):
 
-<br>
-<center><img src="./images/board_vs_loc.png" width=500></center>
-<br>
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/board_vs_loc_dark.png" width=500>
+  <source media="(prefers-color-scheme: light)" srcset="./images/board_vs_loc_light.png" width=500>
+  <img alt="Board vs Loc Diagram" src="./images/board_vs_loc_light.png" width=500>
+</picture></center>
 
 Here's the same image with some highlighting to make it clearer what numbers are `unit IDs` (red), and what numbers are `i` (green) and `j` (blue) coordinates:
 
-<br>
-<center><img src="./images/board_vs_loc_color.png" width=500></center>
-<br>
+
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/board_vs_loc_color_dark.png" width=500>
+  <source media="(prefers-color-scheme: light)" srcset="./images/board_vs_loc_color_light.png" width=500>
+  <img alt="Annotated Board vs Loc Diagram" src="./images/board_vs_loc_color_light.png" width=500>
+</picture></center>
 
 By tracking the piece location in two ways (via Board and Loc), it offers some convenience in checking if pieces are adjacent to other pieces (by making it an _`O(1)`_ lookup on the Board) while still making it easy to find a piece's `(i,j)` location by ID (an `O(1)` lookup in Loc) or to loop through all pieces (by looping over the first dimension of Loc or Stats).
 
@@ -46,7 +59,11 @@ Grid object functions that move pieces will update both Board and Loc (but never
 
 Sincere there are many classes to accomplish the wrapping of Grid objects so they can interact with input devices like keyboards and output devices like your monitor, below is a simplified class diagram highlighting important components and how they interact:
 
-<center><img src="./images/class_diagram.drawio.png"></center>
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/class_diagram_dark.drawio.png" width=500>
+  <source media="(prefers-color-scheme: light)" srcset="./images/class_diagram_light.drawio.png" width=500>
+  <img alt="Class Diagram" src="./images/class_diagram_light.drawio.png" width=500>
+</picture></center>
 
 To avoid confusion, here are explicit definitions of some of the terms above:
 * **Player** - A class that can let you `play()` the game with game I/O and a visualization (not to be confused with a _human_ player). A player can also run the game in `headless()` mode, which plays the game without any visualizations or I/O from humans.
