@@ -51,3 +51,27 @@ class SquareShapeManager:
             for j in range(shape.shape[1]) 
             if shape[i,j]
         ],dtype=np.int32)
+
+    def enumerate_shape_coords(i0,j0,shape_id,board,empty_square=-1):
+
+        shape_start = self.info[shape_id,self.START]
+        shape_end   = self.info[shape_id,self.END]
+        for s in range(shape_start,shape_end):
+            si,sj = self.mask[s]
+            if ( i0+si<0 or i0+si>=board.shape[0] or 
+                 j0+sj<0 or j0+sj>=board.shape[1] ):
+                pass
+            else:
+                yield (i0+si,j0+sj)
+
+    def enumerate_units_within_shape(self,i0,j0,shape_id,board,empty_square=-1):
+
+        shape_start = self.info[shape_id,self.START]
+        shape_end   = self.info[shape_id,self.END]
+        for s in range(shape_start,shape_end):
+            si,sj = self.mask[s]
+            if ( i0+si<0 or i0+si>=board.shape[0] or 
+                 j0+sj<0 or j0+sj>=board.shape[1] ):
+                pass
+            elif board[i0+si,j0+sj] != empty_square:
+                yield board[i0+si,j0+sj]
