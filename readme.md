@@ -1,7 +1,7 @@
 <center><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/banner_dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="./images/banner_light.png">
-  <img alt="Meshgrid Game Experimentation Environment" src="./images/banner_light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./images/banner_dark.png" width=400>
+  <source media="(prefers-color-scheme: light)" srcset="./images/banner_light.png" width=400>
+  <img alt="Meshgrid Game Experimentation Environment" src="./images/banner_light.png" width=400>
 </picture></center>
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/meshgridgame/meshgrid/main?labpath=examples.ipynb)
@@ -43,7 +43,6 @@ The Board itself is represented as a 2D array of squares. The ID of each piece i
 </picture></center>
 
 Here's the same image with some highlighting to make it clearer what numbers are `unit IDs` (red), and what numbers are `i` (green) and `j` (blue) coordinates:
-
 
 <center><picture>
   <source media="(prefers-color-scheme: dark)" srcset="./images/board_vs_loc_color_dark.png" width=500>
