@@ -38,7 +38,7 @@ class BasicRPG(SquareGridGame):
         super().__init__(grid_width, grid_height, max_units, shape_manager, stats_list, **kwargs)
         self.init_grid()
         
-        self.turn_queue = UnitIDOrderedTurnQueue(self.grid.stats,self.STAT)
+        self.turn_queue = UnitIDOrderedTurnQueue(self.grid.stats,self.grid.STAT)
 
     def make_shape_manager(self):
         '''Create a Shape Manager object to be used by the game.
@@ -58,14 +58,14 @@ class BasicRPG(SquareGridGame):
     def init_grid(self):
         '''Initialize the game's Grid at the start of a new game.'''
         
-        self.grid.stats[:,self.STAT.VISIBLE] = True
-        self.grid.stats[:,self.STAT.ALIVE] = True
-        self.grid.stats[:,self.STAT.SHAPE] = 0
-        self.grid.stats[:,self.STAT.SIDE] = np.arange(self.max_units)%2
-        self.grid.stats[:,self.STAT.COLOR] = np.arange(self.max_units)%2        
-        self.grid.stats[:,self.STAT.MOVE] = 2
-        self.grid.stats[:,self.STAT.HP] = 1
-        self.grid.stats[:,self.STAT.DMG] = 2
+        self.grid.stats[:,self.grid.STAT.VISIBLE] = True
+        self.grid.stats[:,self.grid.STAT.ALIVE] = True
+        self.grid.stats[:,self.grid.STAT.SHAPE] = 0
+        self.grid.stats[:,self.grid.STAT.SIDE] = np.arange(self.max_units)%2
+        self.grid.stats[:,self.grid.STAT.COLOR] = np.arange(self.max_units)%2
+        self.grid.stats[:,self.grid.STAT.MOVE] = 2
+        self.grid.stats[:,self.grid.STAT.HP] = 1
+        self.grid.stats[:,self.grid.STAT.DMG] = 2
         self.grid.place_pieces_randomly()
         
     def step(self):
@@ -92,7 +92,7 @@ class BasicRPG(SquareGridGame):
             return True
 
         # move toward the enemy
-        for _ in range(self.grid.stats[unit_id,self.STAT.MOVE]):
+        for _ in range(self.grid.stats[unit_id,self.grid.STAT.MOVE]):
             if target_dist==1:
                 break
             self.grid.step_closer(unit_id,target_id)
@@ -111,8 +111,8 @@ class BasicRPG(SquareGridGame):
         :target_id: The unit receiving damage
         '''
 
-        self.grid.stats[target_id,self.STAT.HP] -= self.grid.stats[unit_id,self.STAT.DMG]
-        if self.grid.stats[target_id,self.STAT.HP] <= 0:
+        self.grid.stats[target_id,self.grid.STAT.HP] -= self.grid.stats[unit_id,self.grid.STAT.DMG]
+        if self.grid.stats[target_id,self.grid.STAT.HP] <= 0:
             self.grid.remove_piece(target_id)
-            self.grid.stats[target_id,self.STAT.ALIVE] = False
-            self.grid.stats[target_id,self.STAT.VISIBLE] = False
+            self.grid.stats[target_id,self.grid.STAT.ALIVE] = False
+            self.grid.stats[target_id,self.grid.STAT.VISIBLE] = False

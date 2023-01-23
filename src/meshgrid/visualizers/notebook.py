@@ -65,15 +65,16 @@ class NotebookVisualizer:
         :game: The Game object to visualize.
         '''
 
+        self._validate_game_object(game)
         self.game = game
-        self.color_id = game.grid.stats[:,game.STAT.COLOR]
+        self.color_id = game.grid.stats[:,game.grid.STAT.COLOR]
         if "on_notebook_key_down" in dir(self.game):
             self.canvas.on_key_down(self.output.capture()(self.game.on_notebook_key_down))
         if "on_notebook_mouse_move" in dir(self.game):
             self.canvas.on_mouse_move(self.output.capture()(self._add_grid_coordinates(self.game.on_notebook_mouse_move)))
         if "on_notebook_mouse_down" in dir(self.game):
             self.canvas.on_mouse_down(self.output.capture()(self._add_grid_coordinates(self.game.on_notebook_mouse_down)))
-        self._validate_stats_enum(self.game.STAT)
+        self._validate_stats_enum(self.game.grid.STAT)
 
     def _validate_stats_enum(self, STAT_ENUM):
         '''Ensure that stats used by this class exist (to avoid errors).
@@ -82,6 +83,11 @@ class NotebookVisualizer:
         '''
         if 'VISIBLE' not in dir(STAT_ENUM) or 'COLOR' not in dir(STAT_ENUM):
             raise Exception("The following stats are required when using NotebookVisualizer: VISIBLE, COLOR")
+
+    def _validate_game_object(self, game_obj):
+
+        if "grid" not in dir(game_obj):
+            raise Exception("NotebookVisualizer class needs the game object to have a `grid` attribute")
 
     def _clear_canvas(self):
         '''Clear the visualization canvas and redraw the background grid.'''
@@ -118,10 +124,10 @@ class NotebookVisualizer:
         
         grid = self.game.grid
         for unit_id in range(self.game.grid.stats.shape[0]):
-            if self.game.grid.stats[unit_id,self.game.STAT.VISIBLE]:
-                self.canvas.fill_style = self.colors[grid.stats[unit_id,self.game.STAT.COLOR]]
-                shape_start = grid.shape.info[grid.stats[unit_id,self.game.STAT.SHAPE],self.game.shape.START]
-                shape_end   = grid.shape.info[grid.stats[unit_id,self.game.STAT.SHAPE],self.game.shape.END]
+            if self.game.grid.stats[unit_id,self.game.grid.STAT.VISIBLE]:
+                self.canvas.fill_style = self.colors[grid.stats[unit_id,self.game.grid.STAT.COLOR]]
+                shape_start = grid.shape.info[grid.stats[unit_id,self.game.grid.STAT.SHAPE],self.game.shape.START]
+                shape_end   = grid.shape.info[grid.stats[unit_id,self.game.grid.STAT.SHAPE],self.game.shape.END]
                 self.canvas.fill_rects(
                     self.scale * (grid.shape.mask[shape_start:shape_end,1]+grid.loc[unit_id,1]),
                     self.scale * (grid.shape.mask[shape_start:shape_end,0]+grid.loc[unit_id,0]),

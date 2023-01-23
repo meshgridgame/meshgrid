@@ -2,8 +2,8 @@ import enum
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-from src.meshgrid.grids.square import SquareGrid2D
-from src.meshgrid.grids.square_multilayer import SquareMultilayerGrid2D
+from src.meshgrid.grids.square.piece import SquarePieceGrid2D
+from src.meshgrid.grids.square.piece_multilayer import SquareMultilayerPieceGrid2D
 
 class SquareGridGame(ABC):
     '''A basic inheritable game on a square grid.
@@ -20,7 +20,7 @@ class SquareGridGame(ABC):
 
     The game object will automatically create a default Grid object for you. If
     you specify `layers`>1 then the grid will be a SquareMultilayerGrid2D object,
-    and otherwise will default to a SquareGrid2D object (which has only one layer).
+    and otherwise will default to a SquarePieceGrid2D object (which has only one layer).
     
     For more information on `layers`, see the SquareMultilayerGrid2D class documentation.
 
@@ -49,12 +49,11 @@ class SquareGridGame(ABC):
         self.height = grid_height
         self.max_units = max_units
         
-        self.STAT = enum.IntEnum('StatsEnum', { stat:e for e,stat in enumerate(stats_list) })
         self.shape = shape_manager
         if layers is None:
-            self.grid = SquareGrid2D(grid_width,grid_height,max_units,shape_manager,self.STAT)
+            self.grid = SquarePieceGrid2D(grid_width,grid_height,max_units,shape_manager,stats_list)
         else:
-            self.grid = SquareMultilayerGrid2D(grid_width,grid_height,max_units,shape_manager,self.STAT,layers=layers)
+            self.grid = SquareMultilayerPieceGrid2D(grid_width,grid_height,max_units,shape_manager,stats_list,layers=layers)
     
     @abstractmethod
     def step(self):

@@ -128,17 +128,17 @@ class TetronimoGame(SquareGridGame):
         '''
 
         i,j = self.grid.loc[unit_id]
-        old_shape = self.grid.stats[unit_id,self.STAT.SHAPE]
-        new_shape = self.cw_mapper[self.grid.stats[unit_id,self.STAT.SHAPE]]
+        old_shape = self.grid.stats[unit_id,self.grid.STAT.SHAPE]
+        new_shape = self.cw_mapper[self.grid.stats[unit_id,self.grid.STAT.SHAPE]]
 
         self.grid.remove_piece(unit_id)
         
-        self.grid.stats[unit_id,self.STAT.SHAPE] = new_shape
+        self.grid.stats[unit_id,self.grid.STAT.SHAPE] = new_shape
         placed = self.grid.place_piece(unit_id,i,j)
         if placed:
             return True
         else:
-            self.grid.stats[unit_id,self.STAT.SHAPE] = old_shape
+            self.grid.stats[unit_id,self.grid.STAT.SHAPE] = old_shape
             self.grid.place_piece(unit_id,i,j)
             return False
     
@@ -150,17 +150,17 @@ class TetronimoGame(SquareGridGame):
         '''
 
         i,j = self.grid.loc[unit_id]
-        old_shape = self.grid.stats[unit_id,self.STAT.SHAPE]
-        new_shape = self.ccw_mapper[self.grid.stats[unit_id,self.STAT.SHAPE]]
+        old_shape = self.grid.stats[unit_id,self.grid.STAT.SHAPE]
+        new_shape = self.ccw_mapper[self.grid.stats[unit_id,self.grid.STAT.SHAPE]]
 
         self.grid.remove_piece(unit_id)
         
-        self.grid.stats[unit_id,self.STAT.SHAPE] = new_shape
+        self.grid.stats[unit_id,self.grid.STAT.SHAPE] = new_shape
         placed = self.grid.place_piece(unit_id,i,j)
         if placed:
             return True
         else:
-            self.grid.stats[unit_id,self.STAT.SHAPE] = old_shape
+            self.grid.stats[unit_id,self.grid.STAT.SHAPE] = old_shape
             self.grid.place_piece(unit_id,i,j)
             return False
     
@@ -171,30 +171,30 @@ class TetronimoGame(SquareGridGame):
         '''
 
         # note: shape #0 is a 1x1 square used for inactive pieces, so we can't use it for the active pieces
-        self.grid.stats[self.active_piece_id,self.STAT.SHAPE] = np.random.randint(1,len(self.shape.shapes))
-        self.grid.stats[self.active_piece_id,self.STAT.COLOR] = np.random.randint(0,len(self.colors))
+        self.grid.stats[self.active_piece_id,self.grid.STAT.SHAPE] = np.random.randint(1,len(self.shape.shapes))
+        self.grid.stats[self.active_piece_id,self.grid.STAT.COLOR] = np.random.randint(0,len(self.colors))
         placed = self.grid.place_piece(self.active_piece_id,0,self.grid.board.shape[1]//2)
-        self.grid.stats[self.active_piece_id,self.STAT.VISIBLE] = placed
+        self.grid.stats[self.active_piece_id,self.grid.STAT.VISIBLE] = placed
         return placed
         
     def init_inactive_pieces(self):
         '''Initialize the Stats on the "inactive" pieces.'''
         
-        self.grid.stats[self.inactive_piece_ids,self.STAT.VISIBLE] = 0
-        self.grid.stats[self.inactive_piece_ids,self.STAT.SHAPE] = 0 # shape #0 is a 1x1 square
-        self.grid.stats[self.inactive_piece_ids,self.STAT.COLOR] = -1
+        self.grid.stats[self.inactive_piece_ids,self.grid.STAT.VISIBLE] = 0
+        self.grid.stats[self.inactive_piece_ids,self.grid.STAT.SHAPE] = 0 # shape #0 is a 1x1 square
+        self.grid.stats[self.inactive_piece_ids,self.grid.STAT.COLOR] = -1
     
     def make_active_piece_inactive(self):
         '''Convert the "active" piece into four 1x1 "inactive" pieces.'''
     
         new_i,new_j = np.where( self.grid.board==self.active_piece_id )
         self.grid.remove_piece(self.active_piece_id)
-        self.grid.stats[self.active_piece_id,self.STAT.VISIBLE] = 0
+        self.grid.stats[self.active_piece_id,self.grid.STAT.VISIBLE] = 0
         for i,j in zip(*(new_i,new_j)):
             new_id = self.get_new_single_block_id()
             self.grid.place_piece(new_id,i,j)
-            self.grid.stats[new_id,self.STAT.VISIBLE] = 1
-            self.grid.stats[new_id,self.STAT.COLOR] = self.grid.stats[self.active_piece_id,self.STAT.COLOR]
+            self.grid.stats[new_id,self.grid.STAT.VISIBLE] = 1
+            self.grid.stats[new_id,self.grid.STAT.COLOR] = self.grid.stats[self.active_piece_id,self.grid.STAT.COLOR]
     
     def get_new_single_block_id(self):
         '''Get a new valid `unit_id` to use for a new "inactive" piece.
@@ -202,7 +202,7 @@ class TetronimoGame(SquareGridGame):
         :return: A new unit_id value
         '''
         
-        unused_pieces = np.where(self.grid.stats[:,self.STAT.VISIBLE]==0)[0]
+        unused_pieces = np.where(self.grid.stats[:,self.grid.STAT.VISIBLE]==0)[0]
         unused_inactive_pieces = np.delete(unused_pieces,self.active_piece_id)
         return unused_inactive_pieces[0]
 
@@ -231,9 +231,9 @@ class TetronimoGame(SquareGridGame):
     def _refresh_piece_visibility_based_on_board_state(self):
         '''Resynchronize Stats for "inactive" pieces based on Board state.'''
 
-        self.grid.stats[self.inactive_piece_ids,self.STAT.VISIBLE] = 0
+        self.grid.stats[self.inactive_piece_ids,self.grid.STAT.VISIBLE] = 0
         visible_pieces = self.grid.board[self.grid.board!=-1]
-        self.grid.stats[visible_pieces,self.STAT.VISIBLE] = 1
+        self.grid.stats[visible_pieces,self.grid.STAT.VISIBLE] = 1
 
     def step(self):
         '''Run for each "tick" of the game to update the game's state.

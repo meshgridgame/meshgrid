@@ -2,9 +2,9 @@ import enum
 import unittest
 import numpy as np
 from src.meshgrid.shape.square import SquareShapeManager
-from src.meshgrid.grids.square_multilayer import SquareMultilayerGrid2D
+from src.meshgrid.grids.square.piece_multilayer import SquareMultilayerPieceGrid2D
 
-class TestSquareMultilayerGrid2D(unittest.TestCase):
+class TestSquareMultilayerPieceGrid2D(unittest.TestCase):
 
     # TODO: add more tests when there exists more than one layer
 
@@ -16,21 +16,18 @@ class TestSquareMultilayerGrid2D(unittest.TestCase):
             np.ones((3,3),dtype=bool),
         ])
         
-        stats_list = ['ALIVE','SIDE','SHAPE']
-        self.STAT = enum.IntEnum('StatsEnum', { stat:e for e,stat in enumerate(stats_list) })
-        
-        self.grid = SquareMultilayerGrid2D(
+        self.grid = SquareMultilayerPieceGrid2D(
             grid_width = 5,
             grid_height = 5,
             max_units = 5,
             shape_manager = self.shape_manager,
-            STAT_ENUM = self.STAT,
+            stats_list = ['ALIVE','SIDE','SHAPE'],
             layers = 1
         )
 
-        self.grid.stats[:,self.STAT.ALIVE] = 1
-        self.grid.stats[:,self.STAT.SHAPE] = 0
-        self.grid.stats[:,self.STAT.SIDE] = [0,1,1,0,0]
+        self.grid.stats[:,self.grid.STAT.ALIVE] = 1
+        self.grid.stats[:,self.grid.STAT.SHAPE] = 0
+        self.grid.stats[:,self.grid.STAT.SIDE] = [0,1,1,0,0]
         self.grid.board[:] = np.dstack([
             np.array([
                 [ 1,-1,-1,-1,-1],
@@ -124,7 +121,7 @@ class TestSquareMultilayerGrid2D(unittest.TestCase):
 
     def test_1x1_piece_can_be_placed_here(self,test_piece=0,empty_square=-1,layer=0):
         
-        self.grid.stats[test_piece,self.STAT.SHAPE] = 0 # this should be a 1x1 shape
+        self.grid.stats[test_piece,self.grid.STAT.SHAPE] = 0 # this should be a 1x1 shape
         for i in range(self.grid.board.shape[0]):
             for j in range(self.grid.board.shape[1]):
                 if self.grid.board[i,j,layer] == empty_square:

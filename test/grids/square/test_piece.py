@@ -2,10 +2,10 @@
 import enum
 import unittest
 import numpy as np
-from src.meshgrid.grids.square import SquareGrid2D
+from src.meshgrid.grids.square.piece import SquarePieceGrid2D
 from src.meshgrid.shape.square import SquareShapeManager
 
-class TestSquareGrid2D(unittest.TestCase):
+class TestSquarePieceGrid2D(unittest.TestCase):
 
     def setUp(self):
 
@@ -15,20 +15,17 @@ class TestSquareGrid2D(unittest.TestCase):
             np.ones((3,3),dtype=bool),
         ])
         
-        stats_list = ['ALIVE','SIDE','SHAPE']
-        self.STAT = enum.IntEnum('StatsEnum', { stat:e for e,stat in enumerate(stats_list) })
-        
-        self.grid = SquareGrid2D(
+        self.grid = SquarePieceGrid2D(
             grid_width = 5,
             grid_height = 5,
             max_units = 5,
             shape_manager = self.shape_manager,
-            STAT_ENUM = self.STAT
+            stats_list = ['ALIVE','SIDE','SHAPE']
         )
 
-        self.grid.stats[:,self.STAT.ALIVE] = 1
-        self.grid.stats[:,self.STAT.SHAPE] = 0
-        self.grid.stats[:,self.STAT.SIDE] = [0,1,1,0,0]
+        self.grid.stats[:,self.grid.STAT.ALIVE] = 1
+        self.grid.stats[:,self.grid.STAT.SHAPE] = 0
+        self.grid.stats[:,self.grid.STAT.SIDE] = [0,1,1,0,0]
         self.grid.board[:] = np.array([
             [ 1,-1,-1,-1,-1],
             [-1,-1,-1, 2,-1],
@@ -116,7 +113,7 @@ class TestSquareGrid2D(unittest.TestCase):
 
     def test_1x1_piece_can_be_placed_here(self,test_piece=0,empty_square=-1):
         
-        self.grid.stats[test_piece,self.STAT.SHAPE] = 0 # this should be a 1x1 shape
+        self.grid.stats[test_piece,self.grid.STAT.SHAPE] = 0 # this should be a 1x1 shape
         for i in range(self.grid.board.shape[0]):
             for j in range(self.grid.board.shape[1]):
                 if self.grid.board[i,j] == empty_square:
