@@ -21,6 +21,6 @@ class NotebookPlayer:
         '''Run one full session of the game, without any visualization.'''
         
         while True:
-            done = self.game.step()
-            if done:
+            self.game.step()
+            if self.game.done:
                 break 
