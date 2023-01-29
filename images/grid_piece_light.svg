@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="grid.svg"
-   inkscape:export-filename="/home/synapse/Documents/Documents/game research/design/Meshgrid/meshgrid/images/grid.png"
+   sodipodi:docname="grid_piece_light.svg"
+   inkscape:export-filename="/home/synapse/Documents/Documents/game research/design/Meshgrid (external)/images/grid_piece_light.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -44,115 +44,115 @@
      id="layer1">
     <g
        id="g1715"
-       transform="matrix(0.13082752,-0.14716769,0.24671571,0.02573858,-7.3296991,109.94935)"
-       style="stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+       transform="matrix(0.13082752,-0.14716769,0.24671571,0.02573858,-4.6838656,115.24105)"
+       style="stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846"
          width="52.754074"
          height="52.754074"
          x="32.569042"
          y="36.36615" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3"
          width="52.754074"
          height="52.754074"
          x="85.32312"
          y="36.366154" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-6"
          width="52.754074"
          height="52.754074"
          x="138.07719"
          y="36.366154" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-7"
          width="52.754074"
          height="52.754074"
          x="190.83128"
          y="36.366154" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-5"
          width="52.754074"
          height="52.754074"
          x="32.569046"
          y="89.120224" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-3"
          width="52.754074"
          height="52.754074"
          x="85.323128"
          y="89.120224" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-6-5"
          width="52.754074"
          height="52.754074"
          x="138.07719"
          y="89.120224" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-7-6"
          width="52.754074"
          height="52.754074"
          x="190.83128"
          y="89.120224" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-2"
          width="52.754074"
          height="52.754074"
          x="32.569054"
          y="141.8743" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-9"
          width="52.754074"
          height="52.754074"
          x="85.323135"
          y="141.8743" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-6-1"
          width="52.754074"
          height="52.754074"
          x="138.07721"
          y="141.8743" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-7-2"
          width="52.754074"
          height="52.754074"
          x="190.8313"
          y="141.8743" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-5-7"
          width="52.754074"
          height="52.754074"
          x="32.569061"
          y="194.62837" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-3-0"
          width="52.754074"
          height="52.754074"
          x="85.323143"
          y="194.62837" />
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-6-5-9"
          width="52.754074"
          height="52.754074"
          x="138.07721"
          y="194.62837" />
       <rect
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#000000;fill-opacity:1;stroke:#808080;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect846-3-7-6-3"
          width="52.754074"
          height="52.754074"
@@ -574,5 +574,149 @@
    style="font-style:italic;font-size:7.76111px"
    id="tspan110783"
    dy="2">2</tspan>=True</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="22.955578"
+       y="80.999229"
+       id="text9466-6-2-0-5-43"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="22.955578"
+         y="80.999229"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-0"><tspan
+           dy="0 5"
+           id="tspan9415"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">i<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-3"
+   dy="2">1</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="41.08218"
+       y="76.004707"
+       id="text9466-6-2-0-5-2"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="41.08218"
+         y="76.004707"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-99"><tspan
+           dy="0 5"
+           id="tspan9415-0"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">j<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-8"
+   dy="2">1</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="2.1624403"
+       y="106.49191"
+       id="text9466-6-2-0-5-7"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="2.1624403"
+         y="106.49191"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-2"><tspan
+           dy="0"
+           id="tspan9415-4"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">i<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-06"
+   dy="2">4</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="80.475578"
+       y="80.379448"
+       id="text9466-6-2-0-5-7-3"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="80.475578"
+         y="80.379448"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-2-9"><tspan
+           dy="0"
+           id="tspan9415-4-1"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">j<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-06-9"
+   dy="2">4</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="16.103804"
+       y="90.043968"
+       id="text9466-6-2-0-5-3"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="16.103804"
+         y="90.043968"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-6"><tspan
+           dy="0"
+           id="tspan9415-8"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">i<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-0"
+   dy="2">2</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="53.977528"
+       y="77.323799"
+       id="text9466-6-2-0-5-3-1"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="53.977528"
+         y="77.323799"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-6-3"><tspan
+           dy="0"
+           id="tspan9415-8-1"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">j<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-0-1"
+   dy="2">2</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="9.2360458"
+       y="97.921783"
+       id="text9466-6-2-0-5-3-6"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="9.2360458"
+         y="97.921783"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-6-2"><tspan
+           dy="0"
+           id="tspan9415-8-8"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">i<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-0-4"
+   dy="2">3</tspan></tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="66.987694"
+       y="78.782043"
+       id="text9466-6-2-0-5-3-6-0"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583"
+         x="66.987694"
+         y="78.782043"
+         dy="0 0 0 0 5 -2 0 5 -2"
+         id="tspan66024-6-2-3"><tspan
+           dy="0"
+           id="tspan9415-8-8-4"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87778px;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL Bold';stroke-width:0.264583">j<tspan
+   style="font-size:7.76111px"
+   id="tspan43570-0-4-0"
+   dy="2">3</tspan></tspan></tspan></text>
   </g>
 </svg>

@@ -3,6 +3,7 @@
   <source media="(prefers-color-scheme: light)" srcset="./images/banner_light.png" width=400>
   <img alt="Meshgrid Game Experimentation Environment" src="./images/banner_light.png" width=400>
 </picture></center>
+<br>
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/meshgridgame/meshgrid/main?labpath=examples.ipynb)
 
@@ -22,39 +23,66 @@ Check out the `meshgrid.ipynb` tutorial notebook for examples of how Meshgrid ca
 
 ### _2.a Overview_
 
-Most of the package's structures revolve around wrapping Grid objects, and adding game I/O and visualizations to the components of Grid objects. A "Grid" itself is generally defined as being a collection of "Pieces" with a "Board". The pieces have a location and may also have game stats associated with them:
+Most of the package's structures revolve around wrapping Grid objects, and adding game I/O and visualizations to the components of Grid objects. Grid objects are abstraction of the notion of a "game board", like a chess board. There are currently two types of Grid objects available:
 
+* Piece Grids - These Grids store the Location and Stats for each game Piece
+* Tile Grids - These Grids assign Stats to each Tile location
+
+The quantity and type of Stats can be definited differently for every game, allowing these classes to flexibly represent many types of games.
+
+A game typically will have just one Grid object, but it is entirely possible to use more than one Grid object in a game, or use a Grid object that has more than one "layer" by using a Multilayer Grid (which is available for Piece Grids). Currently all Grid objects use Square Boards, but future implementations will include the option for Hexagonal Boards as well.
+
+### _2.b Piece Grids: Board, Loc, & Stats_
+
+A piece-based "Grid" is generally defined as being a collection of "Pieces" with a "Board". The Pieces have a Location and may also have game Stats associated with them:
+
+<br>
 <center><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/grid_dark.png" width=500>
-  <source media="(prefers-color-scheme: light)" srcset="./images/grid_light.png" width=500>
-  <img alt="Grid Diagram" src="./images/grid_light.png" width=500>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/grid_piece_dark.png" width=500>
+  <source media="(prefers-color-scheme: light)" srcset="./images/grid_piece_light.png" width=500>
+  <img alt="Grid Diagram" src="./images/grid_piece_light.png" width=500>
 </picture></center>
+<br>
 
-A game typically will have just one Grid object, but it is entirely possible to use more than one Grid object in a game, or use a Grid object that has more than one "layer" by using a Multilayer Grid. Currently all Grid objects use Square Boards, but future implementations will include the option for Hexagonal Boards as well.
+The Board itself is represented as a 2D array of squares (for a square Grid). The ID of each Piece is written into the square on the bBoard where the Piece is located (with empty squares represented by `-1`). The Loc and Stats objects are also 2D arrays, where the first index is the piece's "unit ID". Loc holds the location of the piece on the board, but in `(i,j)` coordinates. This implies that you can find the location of a piece in two ways: by finding the piece's ID on the Board, or by looking at the `(i,j)` value for that piece in Loc. See the diagram below (with row and columns given descriptors in gray for clarity):
 
-### _2.b Board & Loc_
-
-The Board itself is represented as a 2D array of squares. The ID of each piece is written into the square on the board where the piece is located (with empty squares represented by `-1`). The Loc and Stats objects are also 2D arrays, where the first index is the piece's "unit ID". Loc holds the location of the piece on the board, but in `(i,j)` coordinates. This implies that you can find the location of a piece in two ways: by finding the piece's ID on the Board, or by looking at the `(i,j)` value for that piece in Loc. See the diagram below (with row and columns given descriptors in gray for clarity):
-
+<br>
 <center><picture>
   <source media="(prefers-color-scheme: dark)" srcset="./images/board_vs_loc_dark.png" width=500>
   <source media="(prefers-color-scheme: light)" srcset="./images/board_vs_loc_light.png" width=500>
   <img alt="Board vs Loc Diagram" src="./images/board_vs_loc_light.png" width=500>
 </picture></center>
+<br>
 
 Here's the same image with some highlighting to make it clearer what numbers are `unit IDs` (red), and what numbers are `i` (green) and `j` (blue) coordinates:
 
+<br>
 <center><picture>
   <source media="(prefers-color-scheme: dark)" srcset="./images/board_vs_loc_color_dark.png" width=500>
   <source media="(prefers-color-scheme: light)" srcset="./images/board_vs_loc_color_light.png" width=500>
   <img alt="Annotated Board vs Loc Diagram" src="./images/board_vs_loc_color_light.png" width=500>
 </picture></center>
+<br>
 
 By tracking the piece location in two ways (via Board and Loc), it offers some convenience in checking if pieces are adjacent to other pieces (by making it an _`O(1)`_ lookup on the Board) while still making it easy to find a piece's `(i,j)` location by ID (an `O(1)` lookup in Loc) or to loop through all pieces (by looping over the first dimension of Loc or Stats).
 
-Grid object functions that move pieces will update both Board and Loc (but never Stats!) If you plan to update Board manually then it is recommended you call the grid function `rebuild_loc_from_board()` to update Loc accordingly. Likewise, if you plan to update Loc manually then it is recommended you call the grid function `rebuild_board_from_loc()` to update the Board accordingly. In this way, you can use Grid object piece-moving functions, or update Board or Loc directly yourself to move pieces around. In general the Meshgrid game engine aims for flexibility and ease of use whenever possible. Do note that since this is an early version of the engine, it may still be a little tricky to use!
+Grid object functions that move Pieces will update both Board and Loc (but never Stats!) If you plan to update Board manually then it is recommended you call the grid function `rebuild_loc_from_board()` to update Loc accordingly. Likewise, if you plan to update Loc manually then it is recommended you call the grid function `rebuild_board_from_loc()` to update the Board accordingly. In this way, you can use Grid object piece-moving functions, or update Board or Loc directly yourself to move pieces around. In general the Meshgrid game engine aims for flexibility and ease of use whenever possible. Do note that since this is an early version of the engine, it may still be a little tricky to use!
 
-### _2.c Class Diagram_
+### _2.c Tile Grid: Tiles & Implicit Stats_
+
+A tile-based "Grid" packs its Stats directly into each tile, such that all the information for these Grids is stored in a three-dimensional "Tile" array whose indices are `(i,j,stat_type)`. In this way, one can look up the value of any particular Stat at any Tile location.
+
+<br>
+<center><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/grid_tile_dark.png" width=300>
+  <source media="(prefers-color-scheme: light)" srcset="./images/grid_tile_light.png" width=300>
+  <img alt="Grid Diagram" src="./images/grid_tile_light.png" width=300>
+</picture></center>
+<br>
+
+This type of Grid is suitable for games with no pieces, where the board itself has properties. Examples include many Match-3 style games, and Sudoku. Currently there are no Multilayer Tile Grids.
+
+### _2.d Class Diagram_
 
 Sincere there are many classes to accomplish the wrapping of Grid objects so they can interact with input devices like keyboards and output devices like your monitor, below is a simplified class diagram highlighting important components and how they interact:
 
@@ -73,6 +101,7 @@ To avoid confusion, here are explicit definitions of some of the terms above:
 * **Piece** - Something placed on to the board at a certain location, which also includes Stats that affect gameplay. Pieces don't exist as a separate class, but are defined by their Loc and Stat values.
 * **Stats** - Statistics for each game piece (eg: shape, orientation, alive vs dead, HP, etc.), arranged into a single array.
 * **Loc** - Location vectors for each piece, arranged into a single array.
+* **Tiles** - An array of squares (like a chess board), hexes, etc. where each square/hex/etc. contains a 1D array of Stats properties. Each individual square/hex/etc. may be referred to as a Tile.
 
 ### _2.c Future Features_
 
